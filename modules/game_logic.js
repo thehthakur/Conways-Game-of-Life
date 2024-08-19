@@ -46,7 +46,7 @@ function updateState(state) {
         }
 
         // Any live cell with two or three live neighbours lives on to the next generation.
-        if (liveNeighbors == 2 || liveNeighbors == 3) {
+        if (liveNeighbors === 2 || liveNeighbors === 3) {
           newState[i][j] = 1;
         }
 
