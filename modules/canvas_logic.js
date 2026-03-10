@@ -14,28 +14,28 @@ const cols = canvas.width / cellSize;
 
 // Randomly initialize the state
 function initializeStateRandomly(rows, cols) {
-  const state = Array.from({ length: rows }, () => Array(cols).fill(0));
-  for (let i = 0; i < rows; i++) {
-    for (let j = 0; j < cols; j++) {
-      state[i][j] = Math.random() > 0.5 ? 1 : 0;
-    }
-  }
-  return state;
+	const state = Array.from({ length: rows }, () => Array(cols).fill(0));
+	for (let i = 0; i < rows; i++) {
+		for (let j = 0; j < cols; j++) {
+			state[i][j] = Math.random() > 0.5 ? 1 : 0;
+		}
+	}
+	return state;
 }
 
 // Draw the grid on the canvas
 function drawGrid(state) {
-  context.clearRect(0, 0, canvas.width, canvas.height); // clear the canvas
-  for (let i = 0; i < rows; i++) {
-    for (let j = 0; j < cols; j++) {
-      context.strokeStyle = "lightgray";
-      context.strokeRect(j * cellSize, i * cellSize, cellSize, cellSize);
-      if (state[i][j]) {
-        context.fillStyle = "black";
-        context.fillRect(j * cellSize, i * cellSize, cellSize, cellSize);
-      }
-    }
-  }
+	context.clearRect(0, 0, canvas.width, canvas.height); // clear the canvas
+	for (let i = 0; i < rows; i++) {
+		for (let j = 0; j < cols; j++) {
+			context.strokeStyle = "lightgray";
+			context.strokeRect(j * cellSize, i * cellSize, cellSize, cellSize);
+			if (state[i][j]) {
+				context.fillStyle = "black";
+				context.fillRect(j * cellSize, i * cellSize, cellSize, cellSize);
+			}
+		}
+	}
 }
 
 const state = initializeStateRandomly(rows, cols);
